@@ -1,4 +1,6 @@
 This repository contains ready-to-build-packages for bind 9.8.5-P2.
+
+
 Security is not guaranteed though I will try to keep it as updated as possible
 
 To checkout,
@@ -22,3 +24,11 @@ You can build source packages for uploading to Launchpad by running the below in
 ```bash
 debuild -S
 ```
+
+##Notes
+
+You probably want to use geoip-database-contrib in Ubuntu to get the latest database, the geoip-database package is horribly out of date in some versions such as precise
+
+
+This setup is quite accurate at province/state/country-wide, but not so much city-wide - I use this for SandyDNET, and you can see it in action at http://startping.com/ping/tracking.sandyd.me/52271f3c8c3dcfc823000003 (US is seperated into east/west coast servers)
+
