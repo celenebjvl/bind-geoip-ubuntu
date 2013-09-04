@@ -1,4 +1,7 @@
-This repository contains ready-to-build packages for bind 9.8.5-P2
+This repository contains ready-to-build-packages for various versions of bind9 contained in various branches
+
+Bind 9.8.5-P2
+-------------
 
 To checkout,
 
