@@ -25,10 +25,24 @@ You can build source packages for uploading to Launchpad by running the below in
 debuild -S
 ```
 
-##Notes
+###Notes
 
+####Getting The GeoIP Databases
 You probably want to use geoip-database-contrib in Ubuntu to get the latest database, the geoip-database package is horribly out of date in some versions such as precise
 
 
 This setup is quite accurate at province/state/country-wide, but not so much city-wide - I use this for SandyDNET, and you can see it in action at http://startping.com/ping/tracking.sandyd.me/52271f3c8c3dcfc823000003 (US is seperated into east/west coast servers)
 
+####Fixing Apparmor
+If you are using Apparmor with bind, you may find it useful to do the below edits.
+```bash
+nano /etc/apparmor.d/local/usr.sbin.named
+```
+And add the below line
+```bash
+/usr/share/GeoIP/** r,
+```
+and run the below to restart apparmor
+```bash
+sudo service apparmor restart
+```
